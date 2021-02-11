@@ -1,0 +1,166 @@
+<app-appcontent>
+  <h1>
+    {{ page }}
+    <small>
+      Version2.0
+    </small>
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <a href="#">
+        <i class="fa fa-dashboard-o"></i>
+        Home
+      </a>
+    </li>
+    <li class="active">{{ page }}</li>
+  </ol>
+
+  <!-- เนื้อหา -->
+  <section class="content">
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <h3 class="box-title">Cars</h3>
+        <div class="box-tools pull-right">
+          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+          <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
+        </div>
+      </div>
+
+      <div class="box-body">
+        <!-- Row1 -->
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="form-group">
+              <label>ประกอบการ</label>
+              <select name="" id="" class="form-control select2" style="width: 100%;">
+                <option value="1" selected="selected">เกรซ</option>
+                <option value="1">ทรัพย์พศวัฒน์</option>
+                <option value="1">อมรพงษ์</option>
+                <option value="1">ลักษมณ</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="form-group">
+              <label>ลักษณะรถ</label>
+              <select name="" id="" class="form-control select2" style="width: 100%;">
+                <option value="1" selected="selected">กระบะบรรทุก</option>
+                <option value="1">ตู้บรรทุก</option>
+                <option value="1">พ่วง</option>
+                <option value="1">ลากจูง</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="form-group">
+              <label>สถานะ</label>
+              <select name="" id="" class="form-control select2" style="width: 100%;">
+                <option value="1" selected="selected">1</option>
+                <option value="1">*</option>
+                <option value="1">999</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="form-group">
+              <label>งวดภาษี</label>
+              <input type="text" class="form-control" placeholder="Enter ...">
+            </div>
+          </div>
+        </div>
+
+        <!-- Row2 -->
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="form-group">
+              <label>เลขทะเบียน</label>
+              <input type="text" class="form-control" placeholder="Enter ...">
+            </div>
+          </div>
+
+
+          <div class="col-sm-3">
+            <div class="form-group">
+              <label>ตัวแทน</label>
+              <select name="" id="" class="form-control select2" style="width: 100%;">
+                <option value="1" selected="selected">สปิ้ต</option>
+                <option value="1">เปี๊ยก</option>
+                <option value="1">กาต้า</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label>ผู้ถือกรรมสิทธิ์</label>
+              <select name="" id="" class="form-control select2" style="width: 100%;">
+                <option value="1" selected="selected">ไมตรี อินโสม</option>
+                <option value="1">วีรชัย ปลอดแก้ว</option>
+                <option value="1">กุ้งนาง หน่วยวัฒนา</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-3">
+          <button type="button" class="btn bg-maroon">
+            <i class="fa fa-plus"></i>
+            เพิ่มข้อมูล
+          </button>
+          <button type="button" class="btn bg-purple" style="margin:0 8px;">
+            <i class="fa fa-search"></i>
+            ค้นหา
+          </button>
+          <button type="button" class="btn btn-default">
+            <i class="fa fa-close"></i>
+            ยกเลิก
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="box box-primary">
+      <div class="box-header">
+        <div class="box-title">Data Table</div>
+      </div>
+
+      <div class="box-body">
+        <table id="example2" class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>ประกอบการ</th>
+              <th>ลำดับ</th>
+              <th>เลขทะเบียน</th>
+              <th>งวด</th>
+              <th>สถานะ</th>
+              <th>ตัวแทน</th>
+              <th>ผู้ถือกรรมสิทธิ์</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>เกรซ</td>
+              <td>71-0213 สฎ</td>
+              <td>1/63</td>
+              <td>ม.79</td>
+              <td>เปี๊ยก</td>
+              <td>นายวรพล มหาชัย</td>
+              <td>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-icon bg-maroon"><i class="fa fa-eye"></i></button>
+                  <button type="button" class="btn btn-icon bg-maroon"><i class="fa fa-edit"></i></button>
+                  <button type="button" class="btn btn-icon bg-maroon"><i class="fa fa-trash"></i></button>
+                </div>
+              </td>
+            </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+</app-appcontent>
