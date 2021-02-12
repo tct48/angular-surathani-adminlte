@@ -12,6 +12,10 @@ import { AppheaderComponent } from './components/appheader/appheader.component';
 import { AppsettingComponent } from './components/appsetting/appsetting.component';
 import { AppcontentComponent } from './components/appcontent/appcontent.component';
 
+// Service
+import { CarService } from './services/etc/car.service';
+import { HttpClientModule } from '@angular/common/http';
+
 const PageComponent = [
   CarsComponent,
   CreateCarComponent,
@@ -37,8 +41,11 @@ const PageLayout = [
     BrowserModule,
     AppRoutingModule,
     AppRouting,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    CarService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

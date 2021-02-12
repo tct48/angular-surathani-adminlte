@@ -26,99 +26,190 @@
         </div>
       </div>
 
+      <!-- ส่วนเพิ่มข้อมูล -->
       <div class="box-body">
-        <!-- Row1 -->
+        <!-- แถวที่1 -->
         <div class="row">
-          <div class="col-sm-3">
+          <div class="col-md-3 pull-right">
             <div class="form-group">
-              <label>ประกอบการ</label>
-              <select name="" id="" class="form-control select2" style="width: 100%;">
-                <option value="1" selected="selected">เกรซ</option>
-                <option value="1">ทรัพย์พศวัฒน์</option>
-                <option value="1">อมรพงษ์</option>
-                <option value="1">ลักษมณ</option>
-              </select>
+              <label>วันที่ถอน</label>
+              <input type="text" class="form-control" placeholder="Enter ...">
             </div>
           </div>
-
-          <div class="col-sm-3">
+          <div class="col-md-3 pull-right">
             <div class="form-group">
-              <label>ลักษณะรถ</label>
-              <select name="" id="" class="form-control select2" style="width: 100%;">
-                <option value="1" selected="selected">กระบะบรรทุก</option>
-                <option value="1">ตู้บรรทุก</option>
-                <option value="1">พ่วง</option>
-                <option value="1">ลากจูง</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="form-group">
-              <label>สถานะ</label>
-              <select name="" id="" class="form-control select2" style="width: 100%;">
-                <option value="1" selected="selected">1</option>
-                <option value="1">*</option>
-                <option value="1">999</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="form-group">
-              <label>งวดภาษี</label>
+              <label>วันที่บรรจุ</label>
               <input type="text" class="form-control" placeholder="Enter ...">
             </div>
           </div>
         </div>
-
-        <!-- Row2 -->
+        <!-- แถวที่ 2 -->
         <div class="row">
-          <div class="col-sm-3">
+          <div class="col-sm-2">
+            <div class="form-group">
+              <label>ประกอบการ</label>
+              <select name="" id="" class="form-control select2" style="width: 100%;">
+                <option *ngFor="let data of operator;let i = index;" [value]="data._id"
+                  [attr.selected]="i==0 ? true : null">
+                  {{ data.name }}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-sm-2">
+            <div class="form-group">
+              <label>ลักษณะรถ</label>
+              <select name="" id="" class="form-control select2" style="width: 100%;">
+                <option *ngFor="let data of category;let i = index;" [value]="data._id"
+                  [attr.selected]="i==0 ? true : null">
+                  {{ data.name }}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-sm-2">
+            <div class="form-group">
+              <label>ลำดับ</label>
+              <input type="text" class="form-control" placeholder="Enter ...">
+            </div>
+          </div>
+
+          <div class="col-sm-2">
             <div class="form-group">
               <label>เลขทะเบียน</label>
               <input type="text" class="form-control" placeholder="Enter ...">
             </div>
           </div>
 
+          <div class="col-sm-2">
+            <div class="form-group">
+              <label>จังหวัด</label>
+              <select name="" id="" class="form-control select2" style="width: 100%;">
+                <option *ngFor="let data of province;let i = index;" [value]="data.name"
+                  [attr.selected]="i==0 ? true : null">
+                  {{ data.name }}
+                </option>
+              </select>
+            </div>
+          </div>
 
-          <div class="col-sm-3">
+          <div class="col-sm-2">
+            <div class="form-group">
+              <label>งวดภาษี</label>
+              <input type="text" class="form-control" placeholder="Enter ...">
+            </div>
+          </div>
+        </div>
+        <!-- แถวที่ 3 -->
+        <div class="row">
+          <div class="col-sm-2">
+            <div class="form-group">
+              <label>สถานะ</label>
+              <select name="" id="" class="form-control select2" style="width: 100%;">
+                <option *ngFor="let data of status;let i = index;" [value]="data._id"
+                  [attr.selected]="i==0 ? true : null">
+                  {{ data.name }}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-sm-2">
+            <div class="form-group">
+              <label>ยี่ห้อ</label>
+              <select name="" id="" class="form-control select2" style="width: 100%;">
+                <option *ngFor="let data of brand;let i = index;" [value]="data._id"
+                  [attr.selected]="i==0 ? true : null">
+                  {{ data.name }}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-sm-2">
             <div class="form-group">
               <label>ตัวแทน</label>
               <select name="" id="" class="form-control select2" style="width: 100%;">
-                <option value="1" selected="selected">สปิ้ต</option>
-                <option value="1">เปี๊ยก</option>
-                <option value="1">กาต้า</option>
+                <option *ngFor="let data of agent;let i = index;" [value]="data._id"
+                  [attr.selected]="i==0 ? true : null">
+                  {{ data.name }}
+                </option>
               </select>
             </div>
           </div>
 
-          <div class="col-sm-6">
+          <div class="col-sm-4">
             <div class="form-group">
               <label>ผู้ถือกรรมสิทธิ์</label>
               <select name="" id="" class="form-control select2" style="width: 100%;">
-                <option value="1" selected="selected">ไมตรี อินโสม</option>
-                <option value="1">วีรชัย ปลอดแก้ว</option>
-                <option value="1">กุ้งนาง หน่วยวัฒนา</option>
+                <option *ngFor="let data of ownership;let i = index;" [value]="data._id"
+                  [attr.selected]="i==0 ? true : null">
+                  {{ data.name }}
+                </option>
               </select>
             </div>
           </div>
-        </div>
 
-        <div class="mt-3">
-          <button type="button" class="btn bg-maroon">
-            <i class="fa fa-plus"></i>
-            เพิ่มข้อมูล
-          </button>
-          <button type="button" class="btn bg-purple" style="margin:0 8px;">
-            <i class="fa fa-search"></i>
-            ค้นหา
-          </button>
-          <button type="button" class="btn btn-default">
-            <i class="fa fa-close"></i>
-            ยกเลิก
-          </button>
+          <div class="col-sm-2">
+            <div class="form-group">
+              <label>ผู้เช่าซื้อ</label>
+              <select name="" id="" class="form-control select2" style="width: 100%;">
+                <option *ngFor="let data of lease;let i = index;" [value]="data._id"
+                  [attr.selected]="i==0 ? true : null">
+                  {{ data.name }}
+                </option>
+              </select>
+            </div>
+          </div>
+
         </div>
+        <!-- แถวที่ 4 -->
+        <div class="row">
+          <div class="col-sm-2">
+            <div class="form-group">
+              <label>เลขคัสซี</label>
+              <input type="text" class="form-control" placeholder="Enter ...">
+            </div>
+          </div>
+
+          <div class="col-sm-2">
+            <div class="form-group">
+              <label>เลขเครื่อง</label>
+              <input type="text" class="form-control" placeholder="Enter ...">
+            </div>
+          </div>
+
+          <div class="col-sm-2">
+            <div class="form-group">
+              <label>น้ำหนัก</label>
+              <input type="text" class="form-control" placeholder="Enter ...">
+            </div>
+          </div>
+
+          <div class="col-sm-2">
+            <div class="form-group">
+              <label>น้ำหนักรวม</label>
+              <input type="text" class="form-control" placeholder="Enter ...">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box-footer">
+        <button type="button" class="btn bg-maroon">
+          <i class="fa fa-plus"></i>
+          เพิ่มข้อมูล
+        </button>
+        <button type="button" class="btn bg-purple" data-toggle="modal" data-target="#modal-default"
+          style="margin:0 8px;">
+          <i class="fa fa-search"></i>
+          ค้นหาข้อมูล
+        </button>
+        <button type="button" class="btn btn-default">
+          <i class="fa fa-close"></i>
+          ยกเลิก
+        </button>
       </div>
     </div>
 
@@ -143,14 +234,14 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>เกรซ</td>
-              <td>71-0213 สฎ</td>
-              <td>1/63</td>
-              <td>ม.79</td>
-              <td>เปี๊ยก</td>
-              <td>นายวรพล มหาชัย</td>
+            <tr *ngFor="let data of items;let i = index;">
+              <td>{{ i+1 }}</td>
+              <td>{{ data.operator }}</td>
+              <td>{{ data.number }} {{ data.prov }}</td>
+              <td>{{ data.vat }}</td>
+              <td>{{ data.status }}</td>
+              <td>{{ data.agent }}</td>
+              <td>{{ data.ownership }}</td>
               <td>
                 <div class="btn-group">
                   <button type="button" class="btn btn-icon bg-maroon"><i class="fa fa-eye"></i></button>
@@ -163,4 +254,112 @@
       </div>
     </div>
   </section>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="modal-default">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">ค้นหาข้อมูล</h4>
+        </div>
+        <div class="modal-body">
+          <!-- ส่วนค้นหาข้อมูล -->
+          <div class="box-body">
+            <!-- Row1 -->
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <label>ประกอบการ</label>
+                  <select name="" id="" class="form-control select2" style="width: 100%;">
+                    <option *ngFor="let data of operator;let i = index;" [value]="data._id"
+                      [attr.selected]="i==0 ? true : null">
+                      {{ data.name }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <label>ลักษณะรถ</label>
+                  <select name="" id="" class="form-control select2" style="width: 100%;">
+                    <option *ngFor="let data of category;let i = index;" [value]="data._id"
+                      [attr.selected]="i==0 ? true : null">
+                      {{ data.name }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <label>สถานะ</label>
+                  <select name="" id="" class="form-control select2" style="width: 100%;">
+                    <option *ngFor="let data of status;let i = index;" [value]="data._id"
+                      [attr.selected]="i==0 ? true : null">
+                      {{ data.name }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <label>งวดภาษี</label>
+                  <input type="text" class="form-control" placeholder="Enter ...">
+                </div>
+              </div>
+            </div>
+
+            <!-- Row2 -->
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <label>เลขทะเบียน</label>
+                  <input type="text" class="form-control" placeholder="Enter ...">
+                </div>
+              </div>
+
+
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <label>ตัวแทน</label>
+                  <select name="" id="" class="form-control select2" style="width: 100%;">
+                    <option *ngFor="let data of agent;let i = index;" [value]="data._id"
+                      [attr.selected]="i==0 ? true : null">
+                      {{ data.name }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>ผู้ถือกรรมสิทธิ์</label>
+                  <select name="" id="" class="form-control select2" style="width: 100%;">
+                    <option *ngFor="let data of ownership;let i = index;" [value]="data._id"
+                      [attr.selected]="i==0 ? true : null">
+                      {{ data.name }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+          <button type="button" class="btn bg-purple" style="margin:0 8px;">
+            <i class="fa fa-search"></i>
+            ค้นหา
+          </button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
 </app-appcontent>
