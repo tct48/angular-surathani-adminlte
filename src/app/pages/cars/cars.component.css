@@ -11,3 +11,13 @@
 .example-modal .modal {
     background: transparent !important;
 }
+
+input.ng-touched.ng-invalid {
+    border: 1px solid rgb(216, 27, 96);
+    border-left: 5px solid rgb(216, 27, 96);
+}
+
+input.ng-touched.ng-valid {
+    border: 1px solid rgb(96, 92, 168);
+    border-left: 5px solid rgb(96, 92, 168);
+}

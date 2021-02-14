@@ -26,8 +26,23 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li> 
-        <li routerLinkActive="active"><a href="https://adminlte.io/docs" [routerLink]="['dashboard']"  ><i class="fa fa-dashboard "></i> <span>แผงควบคุม</span></a></li>
-        <li routerLinkActive="active"><a href="https://adminlte.io/docs" [routerLink]="['car']"><i class="fa fa-road"></i> <span>จัดการรถ</span></a></li>
+        <li routerLinkActive="active"><a [routerLink]="['dashboard']"  ><i class="fa fa-dashboard "></i> <span>แผงควบคุม</span></a></li>
+        <li routerLinkActive="active"><a [routerLink]="['car']"><i class="fa fa-road"></i> <span>จัดการรถ</span></a></li>
+        <li routerLinkActive="active"><a [routerLink]="['trash']"><i class="fa fa-trash"></i> <span>รายการลบล่าสุด</span></a></li>
+        <li class="treeview" routerLinkActive="active">
+          <a href="#">
+            <i class="fa fa-user"></i>
+            <span>ข้อมูลลูกค้า</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a [routerLink]="['agent']" routerLinkActive="active"><i class="fa fa-circle-o"></i> ตันแทน</a></li>
+            <li><a [routerLink]="['ownership']" routerLinkActive="active"><i class="fa fa-circle-o"></i> ผู้ถือกรรมสิทธิ์</a></li>
+            <li><a [routerLink]="['lease']" routerLinkActive="active"><i class="fa fa-circle-o"></i> ผู้เช่าซื้อ</a></li>
+          </ul>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->

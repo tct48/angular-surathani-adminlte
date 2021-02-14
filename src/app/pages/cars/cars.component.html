@@ -28,185 +28,199 @@
 
       <!-- ส่วนเพิ่มข้อมูล -->
       <div class="box-body">
-        <!-- แถวที่1 -->
-        <div class="row">
-          <div class="col-md-3 pull-right">
-            <div class="form-group">
-              <label>วันที่ถอน</label>
-              <input type="text" class="form-control" placeholder="Enter ...">
+        <form [formGroup]="form">
+          <!-- แถวที่1 -->
+          <div class="row">
+            <div class="col-md-3 pull-right">
+              <div class="form-group">
+                <label>วันที่ถอน</label>
+                <input type="text"  formControlName="imp_date" class="form-control" placeholder="Enter ...">
+              </div>
+            </div>
+            <div class="col-md-3 pull-right">
+              <div class="form-group">
+                <label>วันที่บรรจุ</label>
+                <input type="text" formControlName="exp_date" class="form-control" placeholder="Enter ...">
+              </div>
             </div>
           </div>
-          <div class="col-md-3 pull-right">
-            <div class="form-group">
-              <label>วันที่บรรจุ</label>
-              <input type="text" class="form-control" placeholder="Enter ...">
+          <!-- แถวที่ 2 -->
+          <div class="row">
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label>ประกอบการ</label>
+                <select formControlName="operator" id="" class="form-control select2" style="width: 100%;">
+                  <option value="" [selected]="true">โปรดระบุข้อมูล</option>
+                  <option *ngFor="let data of operator;let i = index;" [value]="data._id"
+                    [attr.selected]="i==0 ? true : null">
+                    {{ data.name }}
+                  </option>
+                </select>
+              </div>
             </div>
-          </div>
-        </div>
-        <!-- แถวที่ 2 -->
-        <div class="row">
-          <div class="col-sm-2">
-            <div class="form-group">
-              <label>ประกอบการ</label>
-              <select name="" id="" class="form-control select2" style="width: 100%;">
-                <option *ngFor="let data of operator;let i = index;" [value]="data._id"
-                  [attr.selected]="i==0 ? true : null">
-                  {{ data.name }}
-                </option>
-              </select>
-            </div>
-          </div>
 
-          <div class="col-sm-2">
-            <div class="form-group">
-              <label>ลักษณะรถ</label>
-              <select name="" id="" class="form-control select2" style="width: 100%;">
-                <option *ngFor="let data of category;let i = index;" [value]="data._id"
-                  [attr.selected]="i==0 ? true : null">
-                  {{ data.name }}
-                </option>
-              </select>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label>ลักษณะรถ</label>
+                <select formControlName="category" class="form-control select2" style="width: 100%;">
+                  <option value="" [selected]="true">โปรดระบุข้อมูล</option>
+                  <option *ngFor="let data of category;let i = index;" [value]="data._id"
+                    [attr.selected]="i==0 ? true : null">
+                    {{ data.name }}
+                  </option>
+                </select>
+              </div>
             </div>
-          </div>
 
-          <div class="col-sm-2">
-            <div class="form-group">
-              <label>ลำดับ</label>
-              <input type="text" class="form-control" placeholder="Enter ...">
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label>ลำดับ</label>
+                <input formControlName="no" type="text" class="form-control" placeholder="Enter ...">
+              </div>
             </div>
-          </div>
 
-          <div class="col-sm-2">
-            <div class="form-group">
-              <label>เลขทะเบียน</label>
-              <input type="text" class="form-control" placeholder="Enter ...">
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label>เลขทะเบียน</label>
+                <input formControlName="number" type="text" class="form-control" placeholder="Enter ...">
+              </div>
             </div>
-          </div>
 
-          <div class="col-sm-2">
-            <div class="form-group">
-              <label>จังหวัด</label>
-              <select name="" id="" class="form-control select2" style="width: 100%;">
-                <option *ngFor="let data of province;let i = index;" [value]="data.name"
-                  [attr.selected]="i==0 ? true : null">
-                  {{ data.name }}
-                </option>
-              </select>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label>จังหวัด</label>
+                <select formControlName="province" class="form-control select2" style="width: 100%;">
+                  <option value="" [selected]="true">โปรดระบุข้อมูล</option>
+                  <option *ngFor="let data of province;let i = index;" [value]="data.name"
+                    [attr.selected]="i==0 ? true : null">
+                    {{ data.name }}
+                  </option>
+                </select>
+              </div>
             </div>
-          </div>
 
-          <div class="col-sm-2">
-            <div class="form-group">
-              <label>งวดภาษี</label>
-              <input type="text" class="form-control" placeholder="Enter ...">
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label>งวดภาษี</label>
+                <input formControlName="vat" type="text" class="form-control" placeholder="Enter ...">
+              </div>
             </div>
           </div>
-        </div>
-        <!-- แถวที่ 3 -->
-        <div class="row">
-          <div class="col-sm-2">
-            <div class="form-group">
-              <label>สถานะ</label>
-              <select name="" id="" class="form-control select2" style="width: 100%;">
-                <option *ngFor="let data of status;let i = index;" [value]="data._id"
-                  [attr.selected]="i==0 ? true : null">
-                  {{ data.name }}
-                </option>
-              </select>
+          <!-- แถวที่ 3 -->
+          <div class="row">
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label>สถานะ</label>
+                <select formControlName="status" class="form-control select2" style="width: 100%;">
+                  <option value="" [selected]="true">โปรดระบุข้อมูล</option>
+                  <option *ngFor="let data of status;let i = index;" [value]="data._id"
+                    [attr.selected]="i==0 ? true : null">
+                    {{ data.name }}
+                  </option>
+                </select>
+              </div>
             </div>
-          </div>
 
-          <div class="col-sm-2">
-            <div class="form-group">
-              <label>ยี่ห้อ</label>
-              <select name="" id="" class="form-control select2" style="width: 100%;">
-                <option *ngFor="let data of brand;let i = index;" [value]="data._id"
-                  [attr.selected]="i==0 ? true : null">
-                  {{ data.name }}
-                </option>
-              </select>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label>ยี่ห้อ</label>
+                <select formControlName="brand" class="form-control select2" style="width: 100%;">
+                  <option value="" [selected]="true">โปรดระบุข้อมูล</option>
+                  <option *ngFor="let data of brand;let i = index;" [value]="data._id"
+                    [attr.selected]="i==0 ? true : null">
+                    {{ data.name }}
+                  </option>
+                </select>
+              </div>
             </div>
-          </div>
 
-          <div class="col-sm-2">
-            <div class="form-group">
-              <label>ตัวแทน</label>
-              <select name="" id="" class="form-control select2" style="width: 100%;">
-                <option *ngFor="let data of agent;let i = index;" [value]="data._id"
-                  [attr.selected]="i==0 ? true : null">
-                  {{ data.name }}
-                </option>
-              </select>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label>ตัวแทน</label>
+                <select formControlName="agent" class="form-control select2" style="width: 100%;">
+                  <option value="" [selected]="true">โปรดระบุข้อมูล</option>
+                  <option *ngFor="let data of agent;let i = index;" [value]="data.id"
+                    [attr.selected]="i==0 ? true : null">
+                    {{ data.name }}
+                  </option>
+                </select>
+              </div>
             </div>
-          </div>
 
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label>ผู้ถือกรรมสิทธิ์</label>
-              <select name="" id="" class="form-control select2" style="width: 100%;">
-                <option *ngFor="let data of ownership;let i = index;" [value]="data._id"
-                  [attr.selected]="i==0 ? true : null">
-                  {{ data.name }}
-                </option>
-              </select>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label>ผู้ถือกรรมสิทธิ์</label>
+                <select formControlName="ownership" class="form-control select2" style="width: 100%;">
+                  <option value="" [selected]="true">โปรดระบุข้อมูล</option>
+                  <option *ngFor="let data of ownership;let i = index;" [value]="data.id"
+                    [attr.selected]="i==0 ? true : null">
+                    {{ data.name }}
+                  </option>
+                </select>
+              </div>
             </div>
-          </div>
 
-          <div class="col-sm-2">
-            <div class="form-group">
-              <label>ผู้เช่าซื้อ</label>
-              <select name="" id="" class="form-control select2" style="width: 100%;">
-                <option *ngFor="let data of lease;let i = index;" [value]="data._id"
-                  [attr.selected]="i==0 ? true : null">
-                  {{ data.name }}
-                </option>
-              </select>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label>ผู้เช่าซื้อ</label>
+                <select formControlName="lease" class="form-control select2" style="width: 100%;">
+                  <option value="" [selected]="true">โปรดระบุข้อมูล</option>
+                  <option *ngFor="let data of lease;let i = index;" [value]="data.id"
+                    [attr.selected]="i==0 ? true : null">
+                    {{ data.name }}
+                  </option>
+                </select>
+              </div>
             </div>
-          </div>
 
-        </div>
-        <!-- แถวที่ 4 -->
-        <div class="row">
-          <div class="col-sm-2">
-            <div class="form-group">
-              <label>เลขคัสซี</label>
-              <input type="text" class="form-control" placeholder="Enter ...">
-            </div>
           </div>
+          <!-- แถวที่ 4 -->
+          <div class="row">
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label>เลขคัสซี</label>
+                <input formControlName="casis" type="text" class="form-control" placeholder="Enter ...">
+              </div>
+            </div>
 
-          <div class="col-sm-2">
-            <div class="form-group">
-              <label>เลขเครื่อง</label>
-              <input type="text" class="form-control" placeholder="Enter ...">
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label>เลขเครื่อง</label>
+                <input formControlName="engine" type="text" class="form-control" placeholder="Enter ...">
+              </div>
             </div>
-          </div>
 
-          <div class="col-sm-2">
-            <div class="form-group">
-              <label>น้ำหนัก</label>
-              <input type="text" class="form-control" placeholder="Enter ...">
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label>น้ำหนัก</label>
+                <input formControlName="weight" type="number" class="form-control" placeholder="Enter ...">
+              </div>
             </div>
-          </div>
 
-          <div class="col-sm-2">
-            <div class="form-group">
-              <label>น้ำหนักรวม</label>
-              <input type="text" class="form-control" placeholder="Enter ...">
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label>น้ำหนักรวม</label>
+                <input formControlName="total_weight" type="number" class="form-control" placeholder="Enter ...">
+              </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
       <div class="box-footer">
-        <button type="button" class="btn bg-maroon">
+        <button type="button" *ngIf="editable==false" (click)="onSubmit()" class="btn bg-maroon">
           <i class="fa fa-plus"></i>
           เพิ่มข้อมูล
+        </button>
+        <button type="button" *ngIf="editable==true" class="btn bg-yellow">
+          <i class="fa fa-edit"></i>
+          แก้ไขข้อมูล
         </button>
         <button type="button" class="btn bg-purple" data-toggle="modal" data-target="#modal-default"
           style="margin:0 8px;">
           <i class="fa fa-search"></i>
           ค้นหาข้อมูล
         </button>
-        <button type="button" class="btn btn-default">
+        <button type="button" (click)="onCancel()" *ngIf="editable==true" class="btn btn-default">
           <i class="fa fa-close"></i>
           ยกเลิก
         </button>
@@ -219,6 +233,14 @@
       </div>
 
       <div class="box-body">
+        <ol class="breadcrumb">
+          <li>
+            จำนวนทั้งสิ้น
+          </li>
+          <li class="active">{{ total_items }} รายการ</li>
+        </ol>
+
+        <!-- ตาราง -->
         <table id="example2" class="table table-bordered table-hover">
           <thead>
             <tr>
@@ -235,22 +257,34 @@
           </thead>
           <tbody>
             <tr *ngFor="let data of items;let i = index;">
-              <td>{{ i+1 }}</td>
+              <td>
+                <span *ngIf="option.sp==1">{{ i+1 }}</span>
+                <span *ngIf="option.sp>1">{{ (option.sp-1)*option.lp+i+1 }}</span>
+              </td>
               <td>{{ data.operator }}</td>
-              <td>{{ data.number }} {{ data.prov }}</td>
+              <td>
+                {{ data.no }}
+              </td>
+              <td>
+                <span tooltip="{{ data.category }}">
+                  {{ data.number }} {{ data.prov }}
+                </span>
+              </td>
               <td>{{ data.vat }}</td>
               <td>{{ data.status }}</td>
               <td>{{ data.agent }}</td>
               <td>{{ data.ownership }}</td>
               <td>
                 <div class="btn-group">
-                  <button type="button" class="btn btn-icon bg-maroon"><i class="fa fa-eye"></i></button>
-                  <button type="button" class="btn btn-icon bg-maroon"><i class="fa fa-edit"></i></button>
-                  <button type="button" class="btn btn-icon bg-maroon"><i class="fa fa-trash"></i></button>
+                  <button type="button" (click)="onView(data.id)" class="btn btn-icon bg-maroon"><i class="fa fa-eye"></i></button>
+                  <button type="button" (click)="onDelete(data.id)" class="btn btn-icon bg-maroon"><i class="fa fa-trash"></i></button>
                 </div>
               </td>
             </tr>
         </table>
+
+        <pagination [totalItems]="total_items" [(ngModel)]="option.sp" [itemsPerPage]="option.lp" [maxSize]="10"
+          (pageChanged)="pageChanged($event)"></pagination>
       </div>
     </div>
   </section>
@@ -268,91 +302,98 @@
         <div class="modal-body">
           <!-- ส่วนค้นหาข้อมูล -->
           <div class="box-body">
-            <!-- Row1 -->
-            <div class="row">
-              <div class="col-sm-3">
-                <div class="form-group">
-                  <label>ประกอบการ</label>
-                  <select name="" id="" class="form-control select2" style="width: 100%;">
-                    <option *ngFor="let data of operator;let i = index;" [value]="data._id"
-                      [attr.selected]="i==0 ? true : null">
-                      {{ data.name }}
-                    </option>
-                  </select>
+            <form [formGroup]="searchForm">
+              <!-- Row1 -->
+              <div class="row">
+                <div class="col-sm-3">
+                  <div class="form-group">
+                    <label>ประกอบการ</label>
+                    <select formControlName="operator" name="operator" class="form-control select2"
+                      style="width: 100%;">
+                      <option value="" [selected]="true">โปรดระบุข้อมูล</option>
+                      <option *ngFor="let data of operator;let i = index;" [ngValue]="data._id"
+                        [attr.selected]="i==0 ? true : null">
+                        {{ data.name }}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-sm-3">
+                  <div class="form-group">
+                    <label>ลักษณะรถ</label>
+                    <select formControlName="category" class="form-control select2" style="width: 100%;">
+                      <option value="" [selected]="true">โปรดระบุข้อมูล</option>
+                      <option *ngFor="let data of category;let i = index;" [value]="data._id"
+                        [attr.selected]="i==0 ? true : null">
+                        {{ data.name }}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-sm-3">
+                  <div class="form-group">
+                    <label>สถานะ</label>
+                    <select formControlName="status" class="form-control select2" style="width: 100%;">
+                      <option value="" [selected]="true">โปรดระบุข้อมูล</option>
+                      <option *ngFor="let data of status;let i = index;" [value]="data._id"
+                        [attr.selected]="i==0 ? true : null">
+                        {{ data.name }}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-sm-3">
+                  <div class="form-group">
+                    <label>งวดภาษี</label>
+                    <input type="text" formControlName="vat" class="form-control" placeholder="Enter ...">
+                  </div>
                 </div>
               </div>
 
-              <div class="col-sm-3">
-                <div class="form-group">
-                  <label>ลักษณะรถ</label>
-                  <select name="" id="" class="form-control select2" style="width: 100%;">
-                    <option *ngFor="let data of category;let i = index;" [value]="data._id"
-                      [attr.selected]="i==0 ? true : null">
-                      {{ data.name }}
-                    </option>
-                  </select>
+              <!-- Row2 -->
+              <div class="row">
+                <div class="col-sm-3">
+                  <div class="form-group">
+                    <label>เลขทะเบียน</label>
+                    <input type="text" formControlName="number" class="form-control" placeholder="Enter ...">
+                  </div>
                 </div>
-              </div>
-
-              <div class="col-sm-3">
-                <div class="form-group">
-                  <label>สถานะ</label>
-                  <select name="" id="" class="form-control select2" style="width: 100%;">
-                    <option *ngFor="let data of status;let i = index;" [value]="data._id"
-                      [attr.selected]="i==0 ? true : null">
-                      {{ data.name }}
-                    </option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="col-sm-3">
-                <div class="form-group">
-                  <label>งวดภาษี</label>
-                  <input type="text" class="form-control" placeholder="Enter ...">
-                </div>
-              </div>
-            </div>
-
-            <!-- Row2 -->
-            <div class="row">
-              <div class="col-sm-3">
-                <div class="form-group">
-                  <label>เลขทะเบียน</label>
-                  <input type="text" class="form-control" placeholder="Enter ...">
-                </div>
-              </div>
 
 
-              <div class="col-sm-3">
-                <div class="form-group">
-                  <label>ตัวแทน</label>
-                  <select name="" id="" class="form-control select2" style="width: 100%;">
-                    <option *ngFor="let data of agent;let i = index;" [value]="data._id"
-                      [attr.selected]="i==0 ? true : null">
-                      {{ data.name }}
-                    </option>
-                  </select>
+                <div class="col-sm-3">
+                  <div class="form-group">
+                    <label>ตัวแทน</label>
+                    <select formControlName="agent" class="form-control select2" style="width: 100%;">
+                      <option value="0" [selected]="true">ทั้งหมด</option>
+                      <option *ngFor="let data of agent;let i = index;" [value]="data.id">
+                        {{ data.name }}
+                      </option>
+                    </select>
+                  </div>
                 </div>
-              </div>
 
-              <div class="col-sm-6">
-                <div class="form-group">
-                  <label>ผู้ถือกรรมสิทธิ์</label>
-                  <select name="" id="" class="form-control select2" style="width: 100%;">
-                    <option *ngFor="let data of ownership;let i = index;" [value]="data._id"
-                      [attr.selected]="i==0 ? true : null">
-                      {{ data.name }}
-                    </option>
-                  </select>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>ผู้ถือกรรมสิทธิ์</label>
+                    <select formControlName="ownership" class="form-control select2" style="width: 100%;">
+                      <option value="0" [selected]="true">ทั้งหมด</option>
+                      <option *ngFor="let data of ownership;let i = index;" [value]="data.id">
+                        {{ data.name }}
+                      </option>
+                    </select>
+                  </div>
                 </div>
               </div>
-            </div>
+            </form>
+
           </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-          <button type="button" class="btn bg-purple" style="margin:0 8px;">
+          <button type="button" (click)="onSearch()" class="btn bg-purple" style="margin:0 8px;">
             <i class="fa fa-search"></i>
             ค้นหา
           </button>

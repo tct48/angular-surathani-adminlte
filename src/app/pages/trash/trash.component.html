@@ -1,0 +1,159 @@
+<app-appcontent>
+    <h1>
+        {{ page }}
+        <small>
+            Version2.0
+        </small>
+    </h1>
+    <ol class="breadcrumb">
+        <li>
+            <a href="#">
+                <i class="fa fa-dashboard-o"></i>
+                Home
+            </a>
+        </li>
+        <li class="active">{{ page }}</li>
+    </ol>
+
+    <section class="content">
+        <div class="box box-primary">
+            <div class="box-header">
+                <h3 class="box-title">Trash</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                            class="fa fa-minus"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i
+                            class="fa fa-remove"></i></button>
+                </div>
+            </div>
+            <div class="box-body">
+                <form>
+                    <!-- Row1 -->
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>ประกอบการ</label>
+                                <select name="operator" class="form-control select2" style="width: 100%;">
+                                    <option value="" [selected]="true">โปรดระบุข้อมูล</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>ลักษณะรถ</label>
+                                <select class="form-control select2" style="width: 100%;">
+                                    <option value="" [selected]="true">โปรดระบุข้อมูล</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>สถานะ</label>
+                                <select class="form-control select2" style="width: 100%;">
+                                    <option value="" [selected]="true">โปรดระบุข้อมูล</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>งวดภาษี</label>
+                                <input type="text" class="form-control" placeholder="Enter ...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row2 -->
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>เลขทะเบียน</label>
+                                <input type="text" class="form-control" placeholder="Enter ...">
+                            </div>
+                        </div>
+
+
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>ตัวแทน</label>
+                                <select formControlName="agent" class="form-control select2" style="width: 100%;">
+                                    <option value="0" [selected]="true">ทั้งหมด</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>ผู้ถือกรรมสิทธิ์</label>
+                                <select formControlName="ownership" class="form-control select2" style="width: 100%;">
+                                    <option value="0" [selected]="true">ทั้งหมด</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn bg-purple">
+                    <i class="fa fa-search"></i>
+                    ค้นหา
+                </button>
+            </div>
+        </div>
+
+        <div class="box box-primary">
+            <div class="box-header">
+                <div class="box-title">Data Table</div>
+            </div>
+
+            <div class="box-body">
+                <ol class="breadcrumb">
+                    <li>
+                        จำนวนทั้งสิ้น
+                    </li>
+                    <li class="active">N/A รายการ</li>
+                </ol>
+
+                <!-- ตาราง -->
+                <table id="example2" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>ประกอบการ</th>
+                            <th>ลำดับ</th>
+                            <th>เลขทะเบียน</th>
+                            <th>งวด</th>
+                            <th>สถานะ</th>
+                            <th>ตัวแทน</th>
+                            <th>ผู้ถือกรรมสิทธิ์</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-icon bg-maroon"><i
+                                            class="fa fa-eye"></i></button>
+                                    <button type="button" class="btn btn-icon bg-maroon"><i
+                                            class="fa fa-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                </table>
+
+                <pagination ></pagination>
+            </div>
+        </div>
+    </section>
+</app-appcontent>

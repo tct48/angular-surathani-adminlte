@@ -1,5 +1,9 @@
 export const AppURL = {
   Dashboard: 'dashboard',
   Car: 'car',
-  CreateCar:'create'
+  CreateCar:'create',
+  Trash: 'trash',
+  Agent:'agent',
+  Ownership:'ownership',
+  Lease:'lease'
 }
